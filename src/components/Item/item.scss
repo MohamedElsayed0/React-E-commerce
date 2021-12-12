@@ -1,0 +1,77 @@
+
+.item{
+	transition: .8s;
+	.card{
+		.img-container{
+			overflow: hidden;
+			.float{
+				transition: .6s;
+				background-color: rgba(8, 32, 50,0.2);
+				width: 110%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left:-110%;
+				.Quick{
+					background-color: rgba(186, 87, 156,0.9);
+				}
+				.All{
+					background-color: #C879B0;
+				}
+			}
+		}
+		.card-body{
+			.btun{
+				width:120px;
+				transition: .6s;
+				background-color: rgb(8, 32, 50);
+			}
+			.first-h5{
+				color: #FF4C29;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			.card-text{
+				font-size: 14px;
+				font-weight: bold;
+				color:rgb(116, 117, 111);
+			}
+			.second-h5{
+				color:rgb(186, 87, 156)
+			}
+		}
+		&:hover{
+			.btun{
+				width:100%;
+			}
+			.float{
+				left:0
+			}
+		}
+	}
+	.discount{
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		padding:7px;
+		background-color: rgba(186, 87, 156,0.8);
+		-text-align: center;
+		color:#000;
+		font-weight: bolder;
+		border-radius: 10px
+	}
+}
+
+
+// .open{
+// 	background-color:#02b3e4;
+// 	cursor: default;
+//     animation-name: open;
+// 	animation-duration: .90s;
+// }
+// @keyframes open {
+// 	from {
+// 		position: absolute;
+// 		right: 3px
+// 	}
+// }

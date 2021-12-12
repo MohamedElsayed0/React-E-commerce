@@ -1,38 +1,170 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body {
+  background: #eaeded;
+}
+
+.is-active {
+  background-color: rgba(175, 197, 219, 0.5);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  position: relative;
   min-height: 100vh;
+  margin-bottom: 0;
+}
+main {
+  padding-bottom: 2.5rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
+
+.animat{
+	animation-name: match;
+	animation-duration: 1s;
+}
+.fade{
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
   from {
-    transform: rotate(0deg);
+    opacity: 1;
+    transform: translateY(0px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 0;
+    transform: translateY(-100px);
   }
+}
+
+@keyframes match {
+	from {
+
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+		opacity: 0.3
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+		opacity: 0.4
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+		opacity: 0.5
+	}
+
+	65% {
+		transform: scale3d(.95, 1.05, 1);
+		opacity: 0.9
+	}
+
+	75% {
+		transform: scale3d(1.05, .95, 1);
+		opacity: 1
+	}
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.my-masonry-grid_column{
+  padding-left: 15px;
+}
+
+.my-masonry-grid_column > div {
+    margin-bottom: 15px;
+}
+.fieldStyle {
+  width: 100% !important;
+  padding: .4rem ;
+  border: 1px solid #000  !important;
+  color:#FF7329;
+  font-weight: bold;
+}
+.fieldStyle:focus {
+  outline: none;
+  border:1px solid #9C27B0 !important;
+}
+
+label{
+  color:#000;
+  font-weight: bold;
+}
+
+.form-control{
+  width: 100% !important;
+  border: 1px solid #000 !important;
+  outline: none;
+}
+.form-control:focus{
+  outline: none;
+  border:1px solid #9C27B0 !important;
+  box-shadow: none;
+}
+
+
+
+.app {
+  position: relative;
+}
+
+.page {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1000ms, transform 1000ms;
+}
+
+.page-exit {
+  opacity: 0;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 100ms, transform 100ms;
 }

@@ -1,0 +1,13 @@
+.MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+  opacity: 0.7;
+}
+.lable {
+  color: #FFF !important;
+  opacity: 0.7;
+  font-size: 14px !important;
+
+}
+.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1auycx3-MuiAutocomplete-root .MuiOutlinedInput-root{
+  color:#fff
+}
